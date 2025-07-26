@@ -13,7 +13,7 @@ A sample excel file can be found in the folder. Format should be strictly follow
 This script requires that `pandas` and 'openpyxl' be installed within the Python environment you are running this script in.
 
 This file can is imported as a module and contains the following functions:
-    * 
+    * convert()
 """
 
 import pandas as pd
@@ -32,7 +32,10 @@ def convert():
     cols_to_fill = df.columns[[0, 1, 2]]
     df[cols_to_fill] = df[cols_to_fill].fillna(method='ffill')
 
+    # Strip whitespace from all string columns
+    df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+
     # Export to CSV
     df.to_csv('./Raw Data Files/Raw Data.csv', index=False)
 
-# convert()
+
