@@ -13,6 +13,9 @@ initial_targets = 19
 total_blocks = 57
 
 
+# ------------------------------
+# main 
+# ------------------------------
 if __name__ == '__main__':
     convert()
     process_data(fps, initial_targets, total_blocks)
