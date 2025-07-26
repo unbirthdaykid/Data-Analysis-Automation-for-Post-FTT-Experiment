@@ -2,7 +2,7 @@
 Run this file to generate all data files.
 """
 
-from raw_data_excel_to_csv import convert
+from data_excel_to_csv import convert
 from data_processing import process_data
 
 # ------------------------------
